@@ -34,6 +34,7 @@ namespace BlackJack1.Controller
 
         public static void showcard()
         {
+
         }
 
     }
