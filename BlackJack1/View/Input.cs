@@ -7,8 +7,5 @@ namespace BlackJack1.View
 {
     class Input
     {
-        public void input()
-        {
-        }
     }
 }
