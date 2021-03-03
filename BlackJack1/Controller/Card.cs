@@ -6,7 +6,6 @@ namespace BlackJack1.Controller
 {
     public class Card
     {
-        
     }
 }
 

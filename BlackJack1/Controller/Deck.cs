@@ -9,6 +9,10 @@ namespace BlackJack1.Controller
     {
         public string CardSuit { get; set; }
         public int CardValue { get; set; }
+
+        string[] suit = { "hearts", "spades", "clubs", "diamonds" };
+        string[] face = {"ace","two","three","four","five","six","seven","eight","nine",
+                        "ten","jack","queen","king" };
         public static void card()
         {
             List<Deck> cards = new List<Deck>();
@@ -31,11 +35,8 @@ namespace BlackJack1.Controller
             cards.Add(new Deck() { CardSuit = "♦", CardValue = 9 });
             cards.Add(new Deck() { CardSuit = "♦", CardValue = 10 });
         }
-
         public static void showcard()
         {
-
         }
-
     }
 }
