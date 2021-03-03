@@ -7,6 +7,6 @@ namespace BlackJack1.Controller
 {
     class Dealer
     {
-
+        
     }
 }
