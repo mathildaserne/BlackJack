@@ -5,7 +5,7 @@ using BlackJack1.View;
 
 namespace BlackJack1.Controller
 {
-    class BlackJack
+    public class BlackJack
     {
         Dealer DealerOne; // creates dealer
                 

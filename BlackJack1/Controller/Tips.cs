@@ -5,7 +5,7 @@ using BlackJack1.View;
 
 namespace BlackJack1.Controller
 {
-    class Tips
+    public class Tips
     {
 
         public static void Insurrance()

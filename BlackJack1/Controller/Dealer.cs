@@ -5,7 +5,7 @@ using BlackJack1.View;
 
 namespace BlackJack1.Controller
 {
-    class Dealer
+    public class Dealer
     {
         Player player;
         List<Card> cards = new List<Card>(); // dealer's hand

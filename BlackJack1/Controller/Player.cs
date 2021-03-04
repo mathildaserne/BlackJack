@@ -14,7 +14,7 @@ namespace BlackJack1.Controller
         HouseBust,
     }
 
-    class Player
+    public class Player
     {
         public Status Status { get; set; } = Status.Nothing;
         public string Name { get; set; }  =  "";
