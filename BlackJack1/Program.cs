@@ -11,7 +11,7 @@ namespace BlackJack1
         {
             Console.WriteLine(" spades (♠), diamonds (♦), clubs (♣) and hearts (♥).");
             Controller.Player.EnterPlayersName();
-            Controller.Deck.card();
+            //Controller.Deck.card();
            // Console.WriteLine(Controller.Deck.cards);
         }
     }
