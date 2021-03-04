@@ -8,7 +8,6 @@ namespace BlackJack1.Controller
     {
         public string Suit { get; set; }
         public int Value { get; set; }
-
         public override string ToString()
         {
             return GetName()  + " "  +  Suit;

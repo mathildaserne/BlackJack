@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BlackJack1.Controller;
 using BlackJack1.View;
+using System.Linq;
 
 namespace BlackJack1
 {
@@ -15,11 +16,19 @@ namespace BlackJack1
             //Controller.Player.EnterPlayersName();
             //Controller.Deck.card();
             // Console.WriteLine(Controller.Deck.cards);
-
             Deck deck = new Deck(); // new deck
             deck.GenerateDeck(); // Gets a new shuffled deck
             foreach (var card in deck.cards)
                 Console.WriteLine(card);
+            Dealer deal = new Dealer();
+            deal.CheckForWinner();
+            //Ask marcus about remove part
+            Console.WriteLine("halååååååååååå" + deck.cards.ElementAt(0));
+            deck.cards.RemoveAt(0);
+            Console.WriteLine("halååååååååååå" + deck.cards.ElementAt(1));
+            deck.cards.RemoveAt(1);
+
+
         }
     }
 }

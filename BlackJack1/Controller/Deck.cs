@@ -8,21 +8,13 @@ namespace BlackJack1.Controller
 {
     public class Deck
     {
-        public Random random;
-
-        /*public Deck(string cardface, string cardvalue)
-        {
-            string[] suit = { "hearts", "spades", "clubs", "diamonds" };
-            string[] face = {"ace","two","three","four","five","six","seven","eight","nine",
-                        "ten","jack","queen","king" };
-
-
-        }*/
+        //public Random random;
 
         public static int Ace = 1;
         public static int Jack = 11;
         public static int Queen = 12;
         public static int King = 13;
+
         public List<Card> cards = new List<Card>();
         public void GenerateDeck(int amount = 1)
         {
@@ -40,9 +32,10 @@ namespace BlackJack1.Controller
                 cards.Add(new Card() { Suit = "♠", Value = 9 });
                 cards.Add(new Card() { Suit = "♠", Value = 10 });
                 cards.Add(new Card() { Suit = "♠", Value = Jack });
-                cards.Add(new Card() { Suit = "♠", Value = Jack });
+                cards.Add(new Card() { Suit = "♠", Value = Queen });
+                cards.Add(new Card() { Suit = "♠", Value = King });
 
-                cards.Add(new Card() { Suit = "♦", Value = 1 });
+                cards.Add(new Card() { Suit = "♦", Value = Ace });
                 cards.Add(new Card() { Suit = "♦", Value = 2 });
                 cards.Add(new Card() { Suit = "♦", Value = 3 });
                 cards.Add(new Card() { Suit = "♦", Value = 4 });
@@ -52,9 +45,9 @@ namespace BlackJack1.Controller
                 cards.Add(new Card() { Suit = "♦", Value = 8 });
                 cards.Add(new Card() { Suit = "♦", Value = 9 });
                 cards.Add(new Card() { Suit = "♦", Value = 10 });
-                cards.Add(new Card() { Suit = "♦", Value = 11 });
-                cards.Add(new Card() { Suit = "♦", Value = 12 });
-                cards.Add(new Card() { Suit = "♦", Value = 13 });
+                cards.Add(new Card() { Suit = "♦", Value = Jack });
+                cards.Add(new Card() { Suit = "♦", Value = Queen });
+                cards.Add(new Card() { Suit = "♦", Value = King });
 
                 cards.Add(new Card() { Suit = "♣", Value = Ace });
                 cards.Add(new Card() { Suit = "♣", Value = 2 });
@@ -83,7 +76,6 @@ namespace BlackJack1.Controller
                 cards.Add(new Card() { Suit = "♥", Value = Queen });
                 cards.Add(new Card() { Suit = "♥", Value = King });
             }
-
             cards = cards.OrderBy(emp => Guid.NewGuid()).ToList(); // Shuffle list
         }
 
