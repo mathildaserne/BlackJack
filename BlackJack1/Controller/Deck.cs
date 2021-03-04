@@ -23,7 +23,10 @@ namespace BlackJack1.Controller
 
         }*/
 
-        
+        public int Ace = 1;
+        public int Jack = 11;
+        public int Queen = 12;
+        public int King = 13;
         public static void card()
         {
             List<Deck> cards = new List<Deck>();
@@ -70,18 +73,18 @@ namespace BlackJack1.Controller
             cards.Add(new Deck() { CardSuit = "♣", CardValue = Queen });
             cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
 
-            cards.Add(new Deck() { CardSuit = "(♥", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
+            cards.Add(new Deck() { CardSuit = "(♥", CardValue = A });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = 2 });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = 3 });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = 4 });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = 5 });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = 6 });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = 7 });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue =8 });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = 9 });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = 10 });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = Jack });
+            cards.Add(new Deck() { CardSuit = "♣", CardValue = Queen });
             cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
 
         }
