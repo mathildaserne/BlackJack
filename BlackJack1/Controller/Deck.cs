@@ -74,7 +74,6 @@ namespace BlackJack1.Controller
             cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
 
             cards.Add(new Deck() { CardSuit = "(♥", CardValue = A });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 2 });
             cards.Add(new Deck() { CardSuit = "♣", CardValue = 3 });
             cards.Add(new Deck() { CardSuit = "♣", CardValue = 4 });
             cards.Add(new Deck() { CardSuit = "♣", CardValue = 5 });
