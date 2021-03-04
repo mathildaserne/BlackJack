@@ -9,10 +9,17 @@ namespace BlackJack1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(" spades (♠), diamonds (♦), clubs (♣) and hearts (♥).");
-            Controller.Player.EnterPlayersName();
+            Console.OutputEncoding = System.Text.Encoding.UTF8; // make console use UTF-8
+
+            //Console.WriteLine(" spades (♠), diamonds (♦), clubs (♣) and hearts (♥).");
+            //Controller.Player.EnterPlayersName();
             //Controller.Deck.card();
-           // Console.WriteLine(Controller.Deck.cards);
+            // Console.WriteLine(Controller.Deck.cards);
+
+            Deck deck = new Deck(); // new deck
+            deck.GenerateDeck(); // Gets a new shuffled deck
+            foreach (var card in deck.cards)
+                Console.WriteLine(card);
         }
     }
 }

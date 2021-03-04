@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using BlackJack1.View;
 
 namespace BlackJack1.Controller
 {
     public class Deck
     {
-        public string CardSuit { get; set; }
-        public int CardValue { get; set; }
         public Random random;
-        //public string deck;
-        public Card cardNumber;
-        public int count;
 
         /*public Deck(string cardface, string cardvalue)
         {
@@ -23,69 +19,72 @@ namespace BlackJack1.Controller
 
         }*/
 
-        public int Ace = 1;
-        public int Jack = 11;
-        public int Queen = 12;
-        public int King = 13;
-        public static void card()
+        public static int Ace = 1;
+        public static int Jack = 11;
+        public static int Queen = 12;
+        public static int King = 13;
+        public List<Card> cards = new List<Card>();
+        public void GenerateDeck(int amount = 1)
         {
-            List<Deck> cards = new List<Deck>();
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = Ace });   
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = 2 });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = 3 });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = 4 });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = 5 });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = 6 });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = 7 });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = 8 });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = 9 });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = 10 });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = Jack });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = Queen });
-            cards.Add(new Deck() { CardSuit = "♠", CardValue = King });
-            
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = Ace });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = 2 });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = 3 });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = 4 });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = 5 });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = 6 });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = 7 });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = 8 });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = 9 });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = 10 });
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = Jack });            
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = Queen });            
-            cards.Add(new Deck() { CardSuit = "♦", CardValue = King });
+            cards.Clear();
+            for (var a = 0; a < amount; a++)
+            {
+                cards.Add(new Card() { Suit = "♠", Value = Ace });
+                cards.Add(new Card() { Suit = "♠", Value = 2 });
+                cards.Add(new Card() { Suit = "♠", Value = 3 });
+                cards.Add(new Card() { Suit = "♠", Value = 4 });
+                cards.Add(new Card() { Suit = "♠", Value = 5 });
+                cards.Add(new Card() { Suit = "♠", Value = 6 });
+                cards.Add(new Card() { Suit = "♠", Value = 7 });
+                cards.Add(new Card() { Suit = "♠", Value = 8 });
+                cards.Add(new Card() { Suit = "♠", Value = 9 });
+                cards.Add(new Card() { Suit = "♠", Value = 10 });
+                cards.Add(new Card() { Suit = "♠", Value = Jack });
+                cards.Add(new Card() { Suit = "♠", Value = Jack });
 
-            
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = Ace });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 2 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 3});
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 4 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 5 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 6 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 7 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 8 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 9 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 10 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = Jack });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = Queen });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
+                cards.Add(new Card() { Suit = "♦", Value = 1 });
+                cards.Add(new Card() { Suit = "♦", Value = 2 });
+                cards.Add(new Card() { Suit = "♦", Value = 3 });
+                cards.Add(new Card() { Suit = "♦", Value = 4 });
+                cards.Add(new Card() { Suit = "♦", Value = 5 });
+                cards.Add(new Card() { Suit = "♦", Value = 6 });
+                cards.Add(new Card() { Suit = "♦", Value = 7 });
+                cards.Add(new Card() { Suit = "♦", Value = 8 });
+                cards.Add(new Card() { Suit = "♦", Value = 9 });
+                cards.Add(new Card() { Suit = "♦", Value = 10 });
+                cards.Add(new Card() { Suit = "♦", Value = 11 });
+                cards.Add(new Card() { Suit = "♦", Value = 12 });
+                cards.Add(new Card() { Suit = "♦", Value = 13 });
 
-            cards.Add(new Deck() { CardSuit = "(♥", CardValue = A });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 3 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 4 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 5 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 6 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 7 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue =8 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 9 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = 10 });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = Jack });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = Queen });
-            cards.Add(new Deck() { CardSuit = "♣", CardValue = King });
+                cards.Add(new Card() { Suit = "♣", Value = Ace });
+                cards.Add(new Card() { Suit = "♣", Value = 2 });
+                cards.Add(new Card() { Suit = "♣", Value = 3 });
+                cards.Add(new Card() { Suit = "♣", Value = 4 });
+                cards.Add(new Card() { Suit = "♣", Value = 5 });
+                cards.Add(new Card() { Suit = "♣", Value = 6 });
+                cards.Add(new Card() { Suit = "♣", Value = 7 });
+                cards.Add(new Card() { Suit = "♣", Value = 8 });
+                cards.Add(new Card() { Suit = "♣", Value = 9 });
+                cards.Add(new Card() { Suit = "♣", Value = 10 });
+                cards.Add(new Card() { Suit = "♣", Value = Jack });
+                cards.Add(new Card() { Suit = "♣", Value = Queen });
+                cards.Add(new Card() { Suit = "♣", Value = King });
 
+                cards.Add(new Card() { Suit = "♥", Value = Ace });
+                cards.Add(new Card() { Suit = "♥", Value = 3 });
+                cards.Add(new Card() { Suit = "♥", Value = 4 });
+                cards.Add(new Card() { Suit = "♥", Value = 5 });
+                cards.Add(new Card() { Suit = "♥", Value = 6 });
+                cards.Add(new Card() { Suit = "♥", Value = 7 });
+                cards.Add(new Card() { Suit = "♥", Value = 8 });
+                cards.Add(new Card() { Suit = "♥", Value = 9 });
+                cards.Add(new Card() { Suit = "♥", Value = 10 });
+                cards.Add(new Card() { Suit = "♥", Value = Jack });
+                cards.Add(new Card() { Suit = "♥", Value = Queen });
+                cards.Add(new Card() { Suit = "♥", Value = King });
+            }
+
+            cards = cards.OrderBy(emp => Guid.NewGuid()).ToList(); // Shuffle list
         }
 
         public static void showcard()

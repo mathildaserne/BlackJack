@@ -1,0 +1,49 @@
+﻿Klasser:
+---------------------------------------------------------------------------------------------------------------------------
+Card - beskriver ett kort (exempelvis ace clubs)
+    + Suite
+    + Value  (Jack, King, Queen = 10), Ace = 1 eller 11
+Deck - lista med 52 kort 
+    + public List<Card> Cards {get;set;}
+    + ShuffleCards()
+
+Dealer - har en Deck
+    + Get new Deck
+    + Draw card
+    + Check if someone wins (card value = 21)
+---------------------------------------------------------------------------------------------------------------------------
+Spel börjar:
+    Kort blandas (new deck, shuffle)
+    Spelrunda:
+        Dealer ger 1 kort till var spelare och 1 till sig själv
+        Räkna spelarens kortvärde
+        Räkna dealerns kortvärde
+        Om någon vinner - spelet slut
+        Om någon får > 21 - spelet slut
+    upprepa tills någon vinner eller förlorar
+
+---------------------------------------------------------------------------------------------------------------------------
+För Godkänt krävs
+• Att spelet kan blanda korten
+• Att spelet kan räkna kortens värde
+• Att spelet kan hålla koll på upp till 5 spelare i en runda
+• Att spelet reagerar om en spelare vinner
+• Att spelet reagerar om huset vinner
+• Att alla publika metoder testas
+• Att alla tester dokumenteras i ett excelblad
+• Att metoderna dokumenteras med vem som skrivit dem
++ Klasser och metoder ska vara delade enligt funktion
+• Clean Code
+• Välkommenterade metoder (XML kommentarer)  ///<Summary> This method does something </summary>
+För VG krävs
+• Att alla godkända delar ska vara uppfyllda
+• Att det ska gå att spela spelet
+• Att man ska kunna satsa fiktiva pengar (vinst = dubbel tillbaka, oavgjort = pengarna tillbaka, förlust = pengar bye bye)
+• Hålla koll på spelarnas kassa
+• Datorbaserade spelare eller hjälpare som kommer med förslag (om kortvärde < 15 säga "Dra ett kort till")
+    o Hjälparen räknar inte kort
+    ▪ ”Du borde nog stanna”
+    ▪ ”Jag skulle nog chansa på ett kort till”
+    ▪ osv
+
+• Även datorspelarna ska testas med TDD och dokumenteras
