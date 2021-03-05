@@ -14,7 +14,7 @@ namespace BlackJack1.Controller
             Dealer = new Dealer(); // creates dealer
             // Sätt default värden
         }
-        public void StartGame()
+        public void StartGame(string dealer, string player)
         {
             Dealer.PrepareDeck(); // Sets deck and player
 
