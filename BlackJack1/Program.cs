@@ -10,31 +10,34 @@ namespace BlackJack1
     {
         static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.OutputEncoding = System.Text.Encoding.UTF8; // make console use UTF-8
 
             //Console.WriteLine(" spades (♠), diamonds (♦), clubs (♣) and hearts (♥).");
             //Controller.Player.EnterPlayersName();
             //Controller.Deck.card();
             // Console.WriteLine(Controller.Deck.cards);
-            Deck deck = new Deck(); // new deck
-            deck.GenerateDeck(); // Gets a new shuffled deck
-            foreach (var card in deck.cards)
-                Console.WriteLine(card);
-            
-            Console.WriteLine("---------------" + deck.cards.ElementAt(0));
+            //Deck deck = new Deck(); // new deck
+            //deck.GenerateDeck(); // Gets a new shuffled deck
+            //foreach (var card in deck.cards)
+            //    Console.WriteLine(card);
+
+
+            //Console.WriteLine("---------------" + deck.cards.ElementAt(0));
 
             //This removes index 0, and a new number is declared for this index
-            deck.cards.RemoveAt(0);
+            //deck.cards.RemoveAt(0);
             Dealer deal = new Dealer();
+            deal.PrepareDeck(); // ni glömde PrepareDeck
             deal.CheckForWinner();
+            deal.DealingOfCards();
             //Ask marcus about remove part
             
-            Console.WriteLine("----------------------" + deck.cards.ElementAt(0));
+            /*Console.WriteLine("----------------------" + deck.cards.ElementAt(0));
             deck.cards.RemoveAt(0);
             Console.WriteLine("----------------------" + deck.cards.ElementAt(1));
-            deck.cards.RemoveAt(1);
+            deck.cards.RemoveAt(1);*/
             
 
         }

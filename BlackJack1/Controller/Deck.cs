@@ -8,8 +8,6 @@ namespace BlackJack1.Controller
 {
     public class Deck
     {
-        //public Random random;
-
         public static int Ace = 1;
         public static int Jack = 11;
         public static int Queen = 12;

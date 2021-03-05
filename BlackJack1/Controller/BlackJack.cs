@@ -8,7 +8,7 @@ namespace BlackJack1.Controller
     public class BlackJack
     {
         Dealer Dealer; // creates dealer
-                
+        Player Player; // creates player      
         public BlackJack()
         {
             Dealer = new Dealer(); // creates dealer
@@ -16,7 +16,7 @@ namespace BlackJack1.Controller
         }
         public void StartGame()
         {
-            var player = new Player();
+            Player = new Player();
             Dealer.PrepareDeck(); // Sets deck and player
 
             Dealer.DealingOfCards(); // Give player and dealer one card 

@@ -8,42 +8,62 @@ namespace BlackJack1.Controller
 {
     public class Dealer
     {
-        Dealer dealer;
+        //Dealer dealer; //Dealer har en instans av sig själv :-O
         Player player;
+        Deck deck; 
         public int PlayerPoints { get; set; } = 0; // ?
         public int DealerPoints { get; set; } = 0; // 
 
-        List<Card> cards = new List<Card>(); // dealer's hand
+        List<Card> cards = new List<Card>(); // list for dealer's hand
 
         public void PrepareDeck()
         {
-            Deck deck = new Deck(); // new deck
-            player  =  new Player(); // new player
+            deck = new Deck(); // new deck
+            player =  new Player(); // new player
             deck.GenerateDeck(); // Gets a new shuffled deck
             player.EnterPlayersName();
         }
         
         public void DealingOfCards()
         {
-            Deck deck = new Deck();
-            player = new Player();
-            dealer = new Dealer();
+
             //var players = new Player(deck.cards.ElementAt(0));
             //Assign player and dealer for each index of card 0, 1, 
             //Reapet dealing of cards until reached a status player 5 dealer 5 
             // Count points of each players card
-            Console.WriteLine("halååååååååååå" + deck.cards.ElementAt(0)); 
+
+            //first set of cards to player and dealer
+            var playerCard  = deck.cards.ElementAt(0);
+            Console.WriteLine("Players card " + playerCard);
             deck.cards.RemoveAt(0);
-            Console.WriteLine("halååååååååååå" + deck.cards.ElementAt(1));
+            var dealerCard = deck.cards.ElementAt(1);
+            Console.WriteLine("Dealers card " + dealerCard);
             deck.cards.RemoveAt(1);
+            player.cards.Add(playerCard);
+            cards.Add(dealerCard);
+
+            //second card for player and dealer 
+            playerCard = deck.cards.ElementAt(2);
+            Console.WriteLine("Players second card " + playerCard);
+            deck.cards.RemoveAt(2);
+            dealerCard = deck.cards.ElementAt(3);
+            Console.WriteLine("Dealers other card " + dealerCard);
+            deck.cards.RemoveAt(3);
+            player.cards.Add(playerCard);
+            cards.Add(dealerCard);
+
+            // Efter removeAt så kommer kortet som var i position 0 att försvinna
+            // och kortet i position 1 kommer att hamna på position 0
 
             //return card;
             // give one card to player
             // give one card to dealer
+
         }
         //internal
         public Status CheckForWinner()
         {
+            
             /*
             // Collect points of player and dealer cards 
 
