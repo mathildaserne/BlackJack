@@ -14,11 +14,13 @@ namespace BlackJack1.Controller
             Dealer = new Dealer(); // creates dealer
             // Sätt default värden
         }
-        public void StartGame(string dealer, string player)
+        public void StartGame()
         {
+            var player = new Player();
             Dealer.PrepareDeck(); // Sets deck and player
 
             Dealer.DealingOfCards(); // Give player and dealer one card 
+
             var status = Dealer.CheckForWinner(); // Check if someone has one
             // Deal 1-2 more cards +? 1-2 cards more (if requested)
             if (status == Status.Win) 

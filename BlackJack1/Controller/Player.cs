@@ -14,7 +14,6 @@ namespace BlackJack1.Controller
         HouseBust,
         BlackJack
     }
-
     public class Player
     {
         public Status Status { get; set; } = Status.Nothing;
@@ -27,7 +26,7 @@ namespace BlackJack1.Controller
         public void EnterPlayersName()
         {
             Console.WriteLine("Enter your name: ");
-            var Name = Console.ReadLine();
+            Name = Console.ReadLine();
 
             if (Name!= null)
             {
@@ -41,10 +40,18 @@ namespace BlackJack1.Controller
                     Bet = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Your bet - " + Bet);
                 }
-
                 else if (answer == "")
                 {
                     Console.WriteLine("Do you want to exit? ");
+                    var answers = Console.ReadLine();
+                    if (answers == "y")
+                    {
+                        Console.Clear();
+                    }
+                    else if (answers == "n")
+                    {
+                        EnterPlayersName();
+                    }
                 }
             }
         }        

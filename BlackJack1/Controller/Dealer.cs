@@ -28,9 +28,7 @@ namespace BlackJack1.Controller
             Deck deck = new Deck();
             player = new Player();
             dealer = new Dealer();
-
             //var players = new Player(deck.cards.ElementAt(0));
-            
             //Assign player and dealer for each index of card 0, 1, 
             //Reapet dealing of cards until reached a status player 5 dealer 5 
             // Count points of each players card

@@ -12,7 +12,6 @@ namespace BlackJack1.Controller
         {
             return GetName()  + " "  +  Suit;
         }
-
         public string GetName()
         {
             return Value switch
