@@ -7,25 +7,51 @@ namespace BlackJack1.Controller
 {
     public class BlackJack
     {
-        Dealer DealerOne; // creates dealer
+        Dealer Dealer; // creates dealer
                 
         public BlackJack()
         {
-            DealerOne = new Dealer(); // creates dealer
+            Dealer = new Dealer(); // creates dealer
             // Sätt default värden
         }
-
         public void StartGame()
         {
-            DealerOne.PrepareDeck(); // Sets deck and player
+            Dealer.PrepareDeck(); // Sets deck and player
 
-            DealerOne.DealingOfCards(); // Give player and dealer one card 
-            var status = DealerOne.CheckForWinner(); // Check if someone has one
-            if (status == Status.Win) { /* player wins */}
-            if (status == Status.Bust) { /* player loses */}
-            if (status == Status.Nothing) { /* keep playing*/}
-            if (status == Status.HouseBust) { /* player wins */}
-            if (status == Status.HouseWins) { /* player loses */}
+            Dealer.DealingOfCards(); // Give player and dealer one card 
+            var status = Dealer.CheckForWinner(); // Check if someone has one
+            // Deal 1-2 more cards +? 1-2 cards more (if requested)
+            if (status == Status.Win) 
+            {
+                Console.WriteLine("Player has won ");
+                // Player wins bet of house
+
+                /* player wins */
+            }
+            if (status == Status.Bust) 
+            {
+                Console.WriteLine("Player has lost ");
+                //Player loses bet to house
+
+                /* player loses */
+            }
+            if (status == Status.Nothing) 
+            { 
+
+                /* keep playing*/
+            }
+            if (status == Status.HouseBust) 
+            {
+                Console.WriteLine("Player has won ");
+                //Player wins bet
+                /* player wins */
+            }
+            if (status == Status.HouseWins) 
+            {
+                Console.WriteLine("Player has lost ");
+                // Player loses bet
+                /* player loses */
+            }
             // etc
         }
     }

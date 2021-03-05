@@ -29,7 +29,9 @@ namespace BlackJack1.Controller
             player = new Player();
             dealer = new Dealer();
 
-            //Assign player and dealer for each index of card 0, 1
+            //Assign player and dealer for each index of card 0, 1, 
+            //Reapet dealing of cards until reached a status
+            // Count points of each players card
             Console.WriteLine("halååååååååååå" + deck.cards.ElementAt(0));
             deck.cards.RemoveAt(0);
             Console.WriteLine("halååååååååååå" + deck.cards.ElementAt(1));
@@ -42,6 +44,7 @@ namespace BlackJack1.Controller
         //internal
         public Status CheckForWinner()
         {
+            /*
             // Collect points of player and dealer cards 
 
             if (PlayerPoints == 21)
@@ -70,9 +73,10 @@ namespace BlackJack1.Controller
             }
             return 0;
             // Help
-            // else if (PlayerPoints == DealerPoints)
-            
-           // throw new NotImplementedException();
+            // else if (PlayerPoints == DealerPoints)*/
+
+            return 0;
+           //throw new NotImplementedException();
         }
     }
 }
