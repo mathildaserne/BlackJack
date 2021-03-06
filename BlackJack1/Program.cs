@@ -23,7 +23,6 @@ namespace BlackJack1
             //foreach (var card in deck.cards)
             //    Console.WriteLine(card);
 
-
             //Console.WriteLine("---------------" + deck.cards.ElementAt(0));
 
             //This removes index 0, and a new number is declared for this index
@@ -33,12 +32,11 @@ namespace BlackJack1
             deal.CheckForWinner();
             deal.DealingOfCards();
             //Ask marcus about remove part
-            
+
             /*Console.WriteLine("----------------------" + deck.cards.ElementAt(0));
             deck.cards.RemoveAt(0);
             Console.WriteLine("----------------------" + deck.cards.ElementAt(1));
             deck.cards.RemoveAt(1);*/
-            
 
         }
     }

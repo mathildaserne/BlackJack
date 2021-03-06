@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using BlackJack1.View;
 using System.Linq;
+using System.IO;
 
 namespace BlackJack1.Controller
 {
@@ -26,12 +27,11 @@ namespace BlackJack1.Controller
         
         public void DealingOfCards()
         {
-
+            int sum = 0;
             //var players = new Player(deck.cards.ElementAt(0));
             //Assign player and dealer for each index of card 0, 1, 
             //Reapet dealing of cards until reached a status player 5 dealer 5 
             // Count points of each players card
-
             //first set of cards to player and dealer
             var playerCard  = deck.cards.ElementAt(0);
             Console.WriteLine("Players card " + playerCard);
@@ -42,6 +42,11 @@ namespace BlackJack1.Controller
             player.cards.Add(playerCard);
             cards.Add(dealerCard);
 
+            sum = playerCard.Points;
+            //player.cards.Add(playerCard.Points);
+            Console.WriteLine(sum);
+            //Console.WriteLine(playerCard.Points); 
+
             //second card for player and dealer 
             playerCard = deck.cards.ElementAt(2);
             Console.WriteLine("Players second card " + playerCard);
@@ -51,6 +56,15 @@ namespace BlackJack1.Controller
             deck.cards.RemoveAt(3);
             player.cards.Add(playerCard);
             cards.Add(dealerCard);
+
+
+            //sum = playerCard + playerCard;
+            Console.WriteLine(playerCard.Points);
+            Console.WriteLine(sum + sum);
+
+            //PlayerPoints == Sum{ deck.cards.ElementAt(1) + deck.cards.ElementAt(2)};
+
+            
 
             // Efter removeAt så kommer kortet som var i position 0 att försvinna
             // och kortet i position 1 kommer att hamna på position 0

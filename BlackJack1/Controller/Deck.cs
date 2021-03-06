@@ -19,61 +19,69 @@ namespace BlackJack1.Controller
             cards.Clear();
             for (var a = 0; a < amount; a++)
             {
-                cards.Add(new Card() { Suit = "♠", Value = Ace });
-                cards.Add(new Card() { Suit = "♠", Value = 2 });
-                cards.Add(new Card() { Suit = "♠", Value = 3 });
-                cards.Add(new Card() { Suit = "♠", Value = 4 });
-                cards.Add(new Card() { Suit = "♠", Value = 5 });
-                cards.Add(new Card() { Suit = "♠", Value = 6 });
-                cards.Add(new Card() { Suit = "♠", Value = 7 });
-                cards.Add(new Card() { Suit = "♠", Value = 8 });
-                cards.Add(new Card() { Suit = "♠", Value = 9 });
-                cards.Add(new Card() { Suit = "♠", Value = 10 });
-                cards.Add(new Card() { Suit = "♠", Value = Jack });
-                cards.Add(new Card() { Suit = "♠", Value = Queen });
-                cards.Add(new Card() { Suit = "♠", Value = King });
+                cards.Add(new Card() { Suit = "♠", Value = Ace, Points = 1 }) ;
+                cards.Add(new Card() { Suit = "♠", Value = 2, Points = 2 });
+                cards.Add(new Card() { Suit = "♠", Value = 3, Points = 3 });
+                cards.Add(new Card() { Suit = "♠", Value = 4, Points = 4 });
+                cards.Add(new Card() { Suit = "♠", Value = 5, Points = 5 });
+                cards.Add(new Card() { Suit = "♠", Value = 6, Points = 6 });
+                cards.Add(new Card() { Suit = "♠", Value = 7, Points = 7 });
+                cards.Add(new Card() { Suit = "♠", Value = 8, Points = 8 });
+                cards.Add(new Card() { Suit = "♠", Value = 9, Points = 9 });
+                cards.Add(new Card() { Suit = "♠", Value = 10, Points = 10 });
+                cards.Add(new Card() { Suit = "♠", Value = Jack, Points = 10 });
+                cards.Add(new Card() { Suit = "♠", Value = Queen, Points = 10 });
+                cards.Add(new Card() { Suit = "♠", Value = King, Points = 10 });
 
-                cards.Add(new Card() { Suit = "♦", Value = Ace });
-                cards.Add(new Card() { Suit = "♦", Value = 2 });
-                cards.Add(new Card() { Suit = "♦", Value = 3 });
-                cards.Add(new Card() { Suit = "♦", Value = 4 });
-                cards.Add(new Card() { Suit = "♦", Value = 5 });
-                cards.Add(new Card() { Suit = "♦", Value = 6 });
-                cards.Add(new Card() { Suit = "♦", Value = 7 });
-                cards.Add(new Card() { Suit = "♦", Value = 8 });
-                cards.Add(new Card() { Suit = "♦", Value = 9 });
-                cards.Add(new Card() { Suit = "♦", Value = 10 });
-                cards.Add(new Card() { Suit = "♦", Value = Jack });
-                cards.Add(new Card() { Suit = "♦", Value = Queen });
-                cards.Add(new Card() { Suit = "♦", Value = King });
+                cards.Add(new Card() { Suit = "♦", Value = Ace, Points = 1 });
+                cards.Add(new Card() { Suit = "♦", Value = 2, Points = 2 });
+                cards.Add(new Card() { Suit = "♦", Value = 3, Points = 3 });
+                cards.Add(new Card() { Suit = "♦", Value = 4, Points = 4 });
+                cards.Add(new Card() { Suit = "♦", Value = 5, Points = 5 });
+                cards.Add(new Card() { Suit = "♦", Value = 6, Points = 6 });
+                cards.Add(new Card() { Suit = "♦", Value = 7, Points = 7 });
+                cards.Add(new Card() { Suit = "♦", Value = 8, Points = 8 });
+                cards.Add(new Card() { Suit = "♦", Value = 9, Points = 9 });
+                cards.Add(new Card() { Suit = "♦", Value = 10, Points = 10 });
+                cards.Add(new Card() { Suit = "♦", Value = Jack, Points = 10 });
+                cards.Add(new Card() { Suit = "♦", Value = Queen, Points = 10 });
+                cards.Add(new Card() { Suit = "♦", Value = King, Points = 10 });
 
-                cards.Add(new Card() { Suit = "♣", Value = Ace });
-                cards.Add(new Card() { Suit = "♣", Value = 2 });
-                cards.Add(new Card() { Suit = "♣", Value = 3 });
-                cards.Add(new Card() { Suit = "♣", Value = 4 });
-                cards.Add(new Card() { Suit = "♣", Value = 5 });
-                cards.Add(new Card() { Suit = "♣", Value = 6 });
-                cards.Add(new Card() { Suit = "♣", Value = 7 });
-                cards.Add(new Card() { Suit = "♣", Value = 8 });
-                cards.Add(new Card() { Suit = "♣", Value = 9 });
-                cards.Add(new Card() { Suit = "♣", Value = 10 });
-                cards.Add(new Card() { Suit = "♣", Value = Jack });
-                cards.Add(new Card() { Suit = "♣", Value = Queen });
-                cards.Add(new Card() { Suit = "♣", Value = King });
+                cards.Add(new Card() { Suit = "♣", Value = Ace, Points = 1 });
+                cards.Add(new Card() { Suit = "♣", Value = 2, Points = 2 });
+                cards.Add(new Card() { Suit = "♣", Value = 3, Points = 3 });
+                cards.Add(new Card() { Suit = "♣", Value = 4, Points = 4 });
+                cards.Add(new Card() { Suit = "♣", Value = 5, Points = 5 });
+                cards.Add(new Card() { Suit = "♣", Value = 6, Points = 6 });
+                cards.Add(new Card() { Suit = "♣", Value = 7, Points = 7 });
+                cards.Add(new Card() { Suit = "♣", Value = 8, Points = 8 });
+                cards.Add(new Card() { Suit = "♣", Value = 9, Points = 9 });
+                cards.Add(new Card() { Suit = "♣", Value = 10, Points = 10 });
+                cards.Add(new Card() { Suit = "♣", Value = Jack, Points = 10 });
+                cards.Add(new Card() { Suit = "♣", Value = Queen, Points = 10 });
+                cards.Add(new Card() { Suit = "♣", Value = King, Points = 10 });
 
-                cards.Add(new Card() { Suit = "♥", Value = Ace });
-                cards.Add(new Card() { Suit = "♥", Value = 3 });
-                cards.Add(new Card() { Suit = "♥", Value = 4 });
-                cards.Add(new Card() { Suit = "♥", Value = 5 });
-                cards.Add(new Card() { Suit = "♥", Value = 6 });
-                cards.Add(new Card() { Suit = "♥", Value = 7 });
-                cards.Add(new Card() { Suit = "♥", Value = 8 });
-                cards.Add(new Card() { Suit = "♥", Value = 9 });
-                cards.Add(new Card() { Suit = "♥", Value = 10 });
-                cards.Add(new Card() { Suit = "♥", Value = Jack });
-                cards.Add(new Card() { Suit = "♥", Value = Queen });
-                cards.Add(new Card() { Suit = "♥", Value = King });
+                cards.Add(new Card() { Suit = "♥", Value = Ace, Points = 1 });
+                cards.Add(new Card() { Suit = "♥", Value = 2, Points = 2 });
+                cards.Add(new Card() { Suit = "♥", Value = 3, Points = 3 });
+                cards.Add(new Card() { Suit = "♥", Value = 4, Points = 4 });
+                cards.Add(new Card() { Suit = "♥", Value = 5, Points = 5 });
+                cards.Add(new Card() { Suit = "♥", Value = 6, Points = 6 });
+                cards.Add(new Card() { Suit = "♥", Value = 7, Points = 7 });
+                cards.Add(new Card() { Suit = "♥", Value = 8, Points = 8 });
+                cards.Add(new Card() { Suit = "♥", Value = 9, Points = 9 });
+                cards.Add(new Card() { Suit = "♥", Value = 10, Points = 10 });
+                cards.Add(new Card() { Suit = "♥", Value = Jack, Points = 10 });
+                cards.Add(new Card() { Suit = "♥", Value = Queen, Points = 10 });
+                cards.Add(new Card() { Suit = "♥", Value = King, Points = 10 });
             }
+            //cards.Where(d => d.Value.Contains("Ace")).Do(d => d.Value = 1);
+
+
+
+            //cards.FirstOrDefault(c => c.Value == 1).Value = 1;
+
+            //var results = cards.Where(x => x.Value = Ace); 
             cards = cards.OrderBy(emp => Guid.NewGuid()).ToList(); // Shuffle list
         }
 
