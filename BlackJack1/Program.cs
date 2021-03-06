@@ -27,6 +27,8 @@ namespace BlackJack1
 
             //This removes index 0, and a new number is declared for this index
             //deck.cards.RemoveAt(0);
+            BlackJack blackjack = new BlackJack();
+            blackjack.StartGame();
             Dealer deal = new Dealer();
             deal.PrepareDeck(); // ni glömde PrepareDeck
             deal.CheckForWinner();

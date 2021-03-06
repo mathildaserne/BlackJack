@@ -9,7 +9,6 @@ namespace BlackJack1.Controller
 {
     public class Dealer
     {
-        //Dealer dealer; //Dealer har en instans av sig själv :-O
         Player player;
         Deck deck; 
         public int PlayerPoints { get; set; } = 0; // ?
@@ -24,15 +23,16 @@ namespace BlackJack1.Controller
             deck.GenerateDeck(); // Gets a new shuffled deck
             player.EnterPlayersName();
         }
-        
         public void DealingOfCards()
         {
             int sum = 0;
-            //var players = new Player(deck.cards.ElementAt(0));
-            //Assign player and dealer for each index of card 0, 1, 
-            //Reapet dealing of cards until reached a status player 5 dealer 5 
+            int sums = 0;
+            int summ = 0;
+           
+            // reach status for every deal of cards
             // Count points of each players card
-            //first set of cards to player and dealer
+            
+            //first set of cards for player and dealer
             var playerCard  = deck.cards.ElementAt(0);
             Console.WriteLine("Players card " + playerCard);
             deck.cards.RemoveAt(0);
@@ -42,10 +42,8 @@ namespace BlackJack1.Controller
             player.cards.Add(playerCard);
             cards.Add(dealerCard);
 
-            sum = playerCard.Points;
-            //player.cards.Add(playerCard.Points);
-            Console.WriteLine(sum);
-            //Console.WriteLine(playerCard.Points); 
+            sums = playerCard.Points;
+            Console.WriteLine(sums);
 
             //second card for player and dealer 
             playerCard = deck.cards.ElementAt(2);
@@ -57,14 +55,13 @@ namespace BlackJack1.Controller
             player.cards.Add(playerCard);
             cards.Add(dealerCard);
 
+            sum = playerCard.Points;
 
-            //sum = playerCard + playerCard;
+            summ = sums + sum;
             Console.WriteLine(playerCard.Points);
-            Console.WriteLine(sum + sum);
+            Console.WriteLine(sums + sum);
 
-            //PlayerPoints == Sum{ deck.cards.ElementAt(1) + deck.cards.ElementAt(2)};
-
-            
+            Console.WriteLine("Total of players cards are now " + summ);
 
             // Efter removeAt så kommer kortet som var i position 0 att försvinna
             // och kortet i position 1 kommer att hamna på position 0
@@ -72,7 +69,6 @@ namespace BlackJack1.Controller
             //return card;
             // give one card to player
             // give one card to dealer
-
         }
         //internal
         public Status CheckForWinner()

@@ -12,7 +12,7 @@ namespace BlackJack1.Controller
         Nothing,
         HouseWins,
         HouseBust,
-        BlackJack
+        BlackJack = 21
     }
     public class Player
     {
