@@ -10,7 +10,7 @@ namespace BlackJack1.Controller
     public class Dealer
     {
         Player player;
-        Deck deck; 
+        Deck deck;
         public int PlayerPoints { get; set; } = 0; // ?
         public int DealerPoints { get; set; } = 0; // 
 
@@ -25,43 +25,82 @@ namespace BlackJack1.Controller
         }
         public void DealingOfCards()
         {
-            int sum = 0;
-            int sums = 0;
-            int summ = 0;
-           
-            // reach status for every deal of cards
-            // Count points of each players card
+            int firstcard = 0;
+            int secondcard = 0;
+            int thirdcard = 0;
+            int sumofcards;
+
+            int dfirstcard = 0;
+            int dsecondcard = 0;
+            int dthirdcard = 0;
+            int dsumofcards;
             
+            // reach status for every deal of cards
+
             //first set of cards for player and dealer
             var playerCard  = deck.cards.ElementAt(0);
-            Console.WriteLine("Players card " + playerCard);
+            Console.WriteLine("Player card " + playerCard);
+            firstcard = playerCard.Points;
             deck.cards.RemoveAt(0);
+            player.cards.Add(playerCard);
+            sumofcards = playerCard.Points;
+            Console.WriteLine(" --------------------------- SCOREBOARD PLAYER " + sumofcards);
+
             var dealerCard = deck.cards.ElementAt(1);
             Console.WriteLine("Dealers card " + dealerCard);
+            dfirstcard = dealerCard.Points;
             deck.cards.RemoveAt(1);
-            player.cards.Add(playerCard);
             cards.Add(dealerCard);
-
-            sums = playerCard.Points;
-            Console.WriteLine(sums);
+            dsumofcards = dealerCard.Points;
+            Console.WriteLine(" --------------------------- SCOREBOARD DEALER " + dsumofcards);
 
             //second card for player and dealer 
             playerCard = deck.cards.ElementAt(2);
             Console.WriteLine("Players second card " + playerCard);
+            secondcard = playerCard.Points;
             deck.cards.RemoveAt(2);
-            dealerCard = deck.cards.ElementAt(3);
-            Console.WriteLine("Dealers other card " + dealerCard);
-            deck.cards.RemoveAt(3);
             player.cards.Add(playerCard);
+            sumofcards = firstcard + secondcard;
+            Console.WriteLine(" --------------------------- SCOREBOARD PLAYER " + sumofcards);
+
+            dealerCard = deck.cards.ElementAt(3);
+            Console.WriteLine("Dealers second card " + dealerCard);
+            dsecondcard = dealerCard.Points;
+            deck.cards.RemoveAt(3);
             cards.Add(dealerCard);
+            dsumofcards = dfirstcard + dsecondcard;
+            Console.WriteLine(" --------------------------- SCOREBOARD DEALER " + dsumofcards);
 
-            sum = playerCard.Points;
+            /*sumofcards = firstcard + secondcard;
+            Console.WriteLine(" --------------------------- SCOREBOARD PLAYER " + sumofcards);
+            dsumofcards = dfirstcard + dsecondcard;
+            Console.WriteLine(" --------------------------- SCOREBOARD DEALER " + dsumofcards);*/
 
-            summ = sums + sum;
-            Console.WriteLine(playerCard.Points);
-            Console.WriteLine(sums + sum);
+            Console.WriteLine("You have two options hit or exit");
+            Console.WriteLine("---------------------------");
 
-            Console.WriteLine("Total of players cards are now " + summ);
+            var answer = Console.ReadLine();
+            if (answer == "hit")
+            {
+                Console.WriteLine("---------------------------");
+                playerCard = deck.cards.ElementAt(4);
+                Console.WriteLine("Player third card " + playerCard);
+                thirdcard = playerCard.Points;
+                deck.cards.RemoveAt(4);
+                player.cards.Add(playerCard);
+                sumofcards = firstcard + secondcard + thirdcard;
+                Console.WriteLine(" --------------------------- SCOREBOARD PLAYER " + sumofcards);
+
+                Console.WriteLine("---------------------------");
+                dealerCard = deck.cards.ElementAt(5);
+                Console.WriteLine("Dealers third card " + dealerCard);
+                dthirdcard = dealerCard.Points;
+                deck.cards.RemoveAt(5);
+                cards.Add(dealerCard);
+                dsumofcards = dfirstcard + dsecondcard + dthirdcard;
+                Console.WriteLine(" --------------------------- SCOREBOARD DEALER " + dsumofcards);
+
+            }
 
             // Efter removeAt så kommer kortet som var i position 0 att försvinna
             // och kortet i position 1 kommer att hamna på position 0
@@ -77,30 +116,7 @@ namespace BlackJack1.Controller
             /*
             // Collect points of player and dealer cards 
 
-            if (PlayerPoints == 21)
-            {
-                Console.WriteLine("Congratulations you got " + Status.BlackJack);
-            }
-            else if (PlayerPoints > 21)
-            {
-                Console.WriteLine("You just got busted " + Status.Bust);
-            }
-            else if (PlayerPoints <21 && PlayerPoints > DealerPoints)
-            {
-                Console.WriteLine("Player has won " + Status.Win);
-            }
-            else if (DealerPoints == 21)
-            {
-                Console.WriteLine("Congratulations you got " + Status.BlackJack);
-            }
-            else if (DealerPoints > 21)
-            {
-                Console.WriteLine("You just got busted " + Status.HouseBust);
-            }
-            else if (DealerPoints <21 && DealerPoints > PlayerPoints)
-            {
-                Console.WriteLine("House has won " + Status.HouseWins);
-            }
+            
             return 0;
             // Help
             // else if (PlayerPoints == DealerPoints)*/

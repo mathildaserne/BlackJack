@@ -18,43 +18,72 @@ namespace BlackJack1.Controller
         {
             Player = new Player();
             Dealer.PrepareDeck(); // Sets deck and player
-
             Dealer.DealingOfCards(); // Give player and dealer one card 
 
             var status = Dealer.CheckForWinner(); // Check if someone has one
+                           
             // Deal 1-2 more cards +? 1-2 cards more (if requested)
-            if (status == Status.Win) 
+            
+            if (status == Status.Win)
             {
                 Console.WriteLine("Player has won ");
                 // Player wins bet of house
 
-                /* player wins */
+                // player wins 
             }
-            if (status == Status.Bust) 
+            if (status == Status.Bust)
             {
                 Console.WriteLine("Player has lost ");
                 //Player loses bet to house
 
-                /* player loses */
+                // player loses 
             }
-            if (status == Status.Nothing) 
-            { 
+            if (status == Status.Nothing)
+            {
 
-                /* keep playing*/
+                // keep playing
             }
-            if (status == Status.HouseBust) 
+            if (status == Status.HouseBust)
             {
                 Console.WriteLine("Player has won ");
                 //Player wins bet
-                /* player wins */
+                // player wins 
             }
-            if (status == Status.HouseWins) 
+            if (status == Status.HouseWins)
             {
                 Console.WriteLine("Player has lost ");
                 // Player loses bet
-                /* player loses */
+                // player loses 
             }
+            /*if (Player.PlayerPoints == 21)
+            {
+                Console.WriteLine("Congratulations you got " + Status.BlackJack);
+            }
+            else if (Player.PlayerPoints > 21)
+            {
+                Console.WriteLine("You just got busted " + Status.Bust);
+            }
+            else if (Player.PlayerPoints < 21 && Player.PlayerPoints > Player.DealerPoints)
+            {
+                Console.WriteLine("Player has won " + Status.Win);
+            }
+            else if (Player.DealerPoints == 21)
+            {
+                Console.WriteLine("Congratulations you got " + Status.BlackJack);
+            }
+            else if (Player.DealerPoints > 21)
+            {
+                Console.WriteLine("You just got busted " + Status.HouseBust);
+            }
+            else if (Player.DealerPoints < 21 && Player.DealerPoints > Player.PlayerPoints)
+            {
+                Console.WriteLine("House has won " + Status.HouseWins);
+            }*/
+
+
+
             // etc
+
         }
     }
 }
