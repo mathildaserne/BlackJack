@@ -12,10 +12,6 @@ namespace BlackJack1.Controller.Tests
         [TestMethod()]
         public void GenerateDeckTest()
         {
-            var Decktest = new DeckTests();
-            DeckTests Decktests =
-
-
             Assert.Fail();
         }
 
