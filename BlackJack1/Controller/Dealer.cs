@@ -35,8 +35,6 @@ namespace BlackJack1.Controller
             int dthirdcard = 0;
             int dsumofcards;
             
-            // reach status for every deal of cards
-
             //first set of cards for player and dealer
             var playerCard  = deck.cards.ElementAt(0);
             Console.WriteLine("Player card " + playerCard);
@@ -71,16 +69,11 @@ namespace BlackJack1.Controller
             dsumofcards = dfirstcard + dsecondcard;
             Console.WriteLine(" --------------------------- SCOREBOARD DEALER " + dsumofcards);
 
-            /*sumofcards = firstcard + secondcard;
-            Console.WriteLine(" --------------------------- SCOREBOARD PLAYER " + sumofcards);
-            dsumofcards = dfirstcard + dsecondcard;
-            Console.WriteLine(" --------------------------- SCOREBOARD DEALER " + dsumofcards);*/
-
             Console.WriteLine("You have two options hit or exit");
             Console.WriteLine("---------------------------");
 
             var answer = Console.ReadLine();
-            if (answer == "hit")
+            if (answer.All(char.IsLetter) && answer != null && answer == "hit")
             {
                 Console.WriteLine("---------------------------");
                 playerCard = deck.cards.ElementAt(4);
@@ -91,7 +84,6 @@ namespace BlackJack1.Controller
                 sumofcards = firstcard + secondcard + thirdcard;
                 Console.WriteLine(" --------------------------- SCOREBOARD PLAYER " + sumofcards);
 
-                Console.WriteLine("---------------------------");
                 dealerCard = deck.cards.ElementAt(5);
                 Console.WriteLine("Dealers third card " + dealerCard);
                 dthirdcard = dealerCard.Points;
@@ -101,13 +93,16 @@ namespace BlackJack1.Controller
                 Console.WriteLine(" --------------------------- SCOREBOARD DEALER " + dsumofcards);
 
             }
-
+            else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+            {
+                Console.Clear();
+            }
+            else if (answer.All(char.IsDigit))
+            {
+                Console.Clear();
+            }
             // Efter removeAt så kommer kortet som var i position 0 att försvinna
             // och kortet i position 1 kommer att hamna på position 0
-
-            //return card;
-            // give one card to player
-            // give one card to dealer
         }
         //internal
         public Status CheckForWinner()
@@ -157,7 +152,6 @@ namespace BlackJack1.Controller
             {
                 var status = Status.Nothing;
                 return status;
-
             }
             return 0;
         }

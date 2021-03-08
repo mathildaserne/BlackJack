@@ -38,7 +38,7 @@ namespace BlackJack1.Controller
                 Console.WriteLine("You wanna play? yes or no ");
                 Console.WriteLine("---------------------------");
                 var answer = Console.ReadLine();
-                if (answer == "yes")
+                if (answer.All(char.IsLetter) && answer != null && answer == "yes")
                 {
                     Console.WriteLine("---------------------------");
                     Console.WriteLine("Bet between 100-500 kr");
@@ -46,27 +46,17 @@ namespace BlackJack1.Controller
                     
                     SetBet(Convert.ToInt32(Console.ReadLine()));
                 }
-                /*else if (answer == "")
+                else if (answer.All(char.IsLetter) && answer != null && answer == "No")
                 {
-                    Console.WriteLine("Do you want to exit? ");
-                    var answers = Console.ReadLine();
-                    if (answers == "y")
-                    {
-                        Console.Clear();
-                    }
-                    else if (answers == "n")
-                    {
-                        EnterPlayersName();
-                    }
-                }*/
-            }
-            if (Name.All(char.IsDigit))
-            {
-                Console.Clear();
-                EnterPlayersName();
+                    Console.Clear();
+                }
+                if (answer.All(char.IsDigit))
+                {
+                    Console.Clear();
+                    EnterPlayersName();
+                }
             }
         }
-
         public void SetBet(int bet)
         {
             Bet = bet;

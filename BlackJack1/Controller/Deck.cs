@@ -75,16 +75,8 @@ namespace BlackJack1.Controller
                 cards.Add(new Card() { Suit = "♥", Value = Queen, Points = 10 });
                 cards.Add(new Card() { Suit = "♥", Value = King, Points = 10 });
             }
-            //cards.Where(d => d.Value.Contains("Ace")).Do(d => d.Value = 1);
-
-
-
-            //cards.FirstOrDefault(c => c.Value == 1).Value = 1;
-
-            //var results = cards.Where(x => x.Value = Ace); 
             cards = cards.OrderBy(emp => Guid.NewGuid()).ToList(); // Shuffle list
         }
-
         public static void showcard()
         {
         }
