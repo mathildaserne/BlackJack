@@ -112,17 +112,54 @@ namespace BlackJack1.Controller
         //internal
         public Status CheckForWinner()
         {
-            
-            /*
-            // Collect points of player and dealer cards 
+            var points = 0;
+            foreach (var card in player.cards)
+            {
+                points += card.Points;
+            }
+            var dealerpoints = 0;
+            foreach (var card in cards)
+            {
+                dealerpoints += card.Points;
+            }
+            if (points == 21 || dealerpoints == 21)
+            {
+                var status = Status.BlackJack;
+                return status;
+            }
+            else if (points >21)
+            {
+                var status = Status.Bust;
+                return status;
+            }
+            else if (dealerpoints >21)
+            {
+                var status = Status.HouseBust;
+                return status;
+            }
+            else if (points <21 && points > dealerpoints)
+            {
+                var status = Status.Win;
+                return status;
+            }
+            else if (dealerpoints <21 && dealerpoints > points)
+            {
+                var status = Status.HouseWins;
+                return status;
+            }
+            else if (points >21 && dealerpoints >21)
+            {
+                var status = Status.HouseBust;
+                status = Status.Bust;
+                return status;
+            }
+            else if (points == dealerpoints)
+            {
+                var status = Status.Nothing;
+                return status;
 
-            
+            }
             return 0;
-            // Help
-            // else if (PlayerPoints == DealerPoints)*/
-
-            return 0;
-           //throw new NotImplementedException();
         }
     }
 }

@@ -26,14 +26,14 @@ namespace BlackJack1.Controller
             
             if (status == Status.Win)
             {
-                Console.WriteLine("Player has won ");
+                Console.WriteLine("Player has won, dealer has lost");
                 // Player wins bet of house
 
                 // player wins 
             }
             if (status == Status.Bust)
             {
-                Console.WriteLine("Player has lost ");
+                Console.WriteLine("Player has lost, dealer has won ");
                 //Player loses bet to house
 
                 // player loses 
@@ -45,15 +45,19 @@ namespace BlackJack1.Controller
             }
             if (status == Status.HouseBust)
             {
-                Console.WriteLine("Player has won ");
+                Console.WriteLine("Player has won, dealer has lost ");
                 //Player wins bet
                 // player wins 
             }
             if (status == Status.HouseWins)
             {
-                Console.WriteLine("Player has lost ");
+                Console.WriteLine("Player has lost, dealer has won ");
                 // Player loses bet
                 // player loses 
+            }
+            if (status == Status.BlackJack)
+            {
+                Console.WriteLine("Blackjack !!");
             }
             /*if (Player.PlayerPoints == 21)
             {

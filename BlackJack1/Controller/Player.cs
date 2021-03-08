@@ -13,11 +13,11 @@ namespace BlackJack1.Controller
         Nothing,
         HouseWins,
         HouseBust,
-        BlackJack = 21
+        BlackJack
     }
     public class Player
     {
-        public Status Status { get; set; } = Status.Nothing;
+        public Status Status { get; set; } = new Status(); //= Status.Nothing;
         public string Name { get; set; }  =  "";
         public double Bet { get; set; }  =  0;
         public int PlayerPoints { get; set; } = 0; // ?
@@ -43,19 +43,8 @@ namespace BlackJack1.Controller
                     Console.WriteLine("---------------------------");
                     Console.WriteLine("Bet between 100-500 kr");
                     Console.WriteLine("---------------------------");
-                    Bet = Convert.ToInt32(Console.ReadLine());
-
-                    if (Bet >= 100 && Bet <= 500)
-                    {
-                        Console.WriteLine("---------------------------");
-                        Console.WriteLine("Your bet - " + Bet);
-                        Console.WriteLine("---------------------------");
-                    }
-                    else 
-                    {
-                        Console.Clear();
-                        EnterPlayersName();
-                    }
+                    
+                    SetBet(Convert.ToInt32(Console.ReadLine()));
                 }
                 /*else if (answer == "")
                 {
@@ -76,6 +65,22 @@ namespace BlackJack1.Controller
                 Console.Clear();
                 EnterPlayersName();
             }
-        }        
+        }
+
+        public void SetBet(int bet)
+        {
+            Bet = bet;
+            if (Bet >= 100 && Bet <= 500)
+            {
+                Console.WriteLine("---------------------------");
+                Console.WriteLine("Your bet - " + Bet);
+                Console.WriteLine("---------------------------");
+            }
+            else
+            {
+                Console.Clear();
+                EnterPlayersName();
+            }
+        }
     }
 }
