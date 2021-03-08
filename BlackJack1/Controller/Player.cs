@@ -18,8 +18,8 @@ namespace BlackJack1.Controller
     public class Player
     {
         public Status Status { get; set; } = new Status(); //= Status.Nothing;
-        public string Name { get; set; }  =  "";
-        public double Bet { get; set; }  =  0;
+        public string Name { get; set; } = "";
+        public double Bet { get; set; } = 0;
         public int PlayerPoints { get; set; } = 0; // ?
         public int DealerPoints { get; set; } = 0; // ?
         public List<Card> cards { get; set; } = new List<Card>(); // spelarens hand
@@ -43,7 +43,7 @@ namespace BlackJack1.Controller
                     Console.WriteLine("---------------------------");
                     Console.WriteLine("Bet between 100-500 kr");
                     Console.WriteLine("---------------------------");
-                    
+
                     SetBet(Convert.ToInt32(Console.ReadLine()));
                 }
                 else if (answer.All(char.IsLetter) && answer != null && answer == "No")

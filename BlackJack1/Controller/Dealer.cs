@@ -14,13 +14,25 @@ namespace BlackJack1.Controller
         public int PlayerPoints { get; set; } = 0; // ?
         public int DealerPoints { get; set; } = 0; // 
 
-        List<Card> cards = new List<Card>(); // list for dealer's hand
+        List<Card> cards = new List<Card>();
+        /// <summary>
+        /// List for dealer's hand
+        /// </summary>
 
         public void PrepareDeck()
         {
-            deck = new Deck(); // new deck
-            player =  new Player(); // new player
-            deck.GenerateDeck(); // Gets a new shuffled deck
+            deck = new Deck(); 
+            /// <summary>
+            /// New deck
+            /// </summary>
+            player =  new Player(); 
+            /// <summary>
+            /// New player
+            /// </summary>
+            deck.GenerateDeck();
+            /// <summary>
+            /// Gets a new shuffled deck
+            /// </summary>
             player.EnterPlayersName();
         }
         public void DealingOfCards()
@@ -34,8 +46,10 @@ namespace BlackJack1.Controller
             int dsecondcard = 0;
             int dthirdcard = 0;
             int dsumofcards;
-            
-            //first set of cards for player and dealer
+
+            /// <summary>
+            /// Deals first set of cards for player and house
+            /// </summary>
             var playerCard  = deck.cards.ElementAt(0);
             Console.WriteLine("Player card " + playerCard);
             firstcard = playerCard.Points;
@@ -52,7 +66,9 @@ namespace BlackJack1.Controller
             dsumofcards = dealerCard.Points;
             Console.WriteLine(" --------------------------- SCOREBOARD DEALER " + dsumofcards);
 
-            //second card for player and dealer 
+            /// <summary>
+            /// Deals second set of cards for player and house
+            /// </summary> 
             playerCard = deck.cards.ElementAt(2);
             Console.WriteLine("Players second card " + playerCard);
             secondcard = playerCard.Points;
@@ -72,6 +88,9 @@ namespace BlackJack1.Controller
             Console.WriteLine("You have two options hit or exit");
             Console.WriteLine("---------------------------");
 
+            /// <summary>
+            /// Third set of cards for player and house if wanted
+            /// </summary>
             var answer = Console.ReadLine();
             if (answer.All(char.IsLetter) && answer != null && answer == "hit")
             {
@@ -107,6 +126,9 @@ namespace BlackJack1.Controller
         //internal
         public Status CheckForWinner()
         {
+            /// <summary>
+            /// Checks status for player and dealer, depending on sum of cards
+            /// </summary>
             var points = 0;
             foreach (var card in player.cards)
             {

@@ -8,23 +8,41 @@ namespace BlackJack1.Controller
 {
     public class BlackJack
     {
-        Dealer Dealer; // creates dealer
-        Player Player; // creates player      
+        Dealer Dealer;
+        /// <summary>
+        /// creates dealer
+        /// </summary>
+        Player Player;
+        /// <summary>
+        /// creates player
+        /// </summary>
         public BlackJack()
         {
-            Dealer = new Dealer(); // creates dealer
+            Dealer = new Dealer();
+            /// <summary
+            /// creates dealer
+            /// </summary>
+
             // Sätt default värden
         }
         public void StartGame()
         {
             Player = new Player();
-            Dealer.PrepareDeck(); // Sets deck and player
-            Dealer.DealingOfCards(); // Give player and dealer one card 
+            Dealer.PrepareDeck();
+            /// <summary
+            /// Sets deck and player
+            /// </summary>
+            
+            Dealer.DealingOfCards();
+            /// <summary>
+            /// Give player and dealer one card 
+            /// </summary>
 
-            var status = Dealer.CheckForWinner(); // Check if someone has one
-
-            // if requested 1-2 cards more
-
+            var status = Dealer.CheckForWinner();
+            /// <summary>
+            /// Check if someone has one
+            /// </summary>
+            
             if (status == Status.Win)
             {
                 Console.WriteLine("Player wins !!");
@@ -41,8 +59,6 @@ namespace BlackJack1.Controller
                     Console.Clear();
                 }
                 // Player wins bet of house
-
-                // player wins 
             }
             if (status == Status.Bust)
             {
@@ -60,8 +76,6 @@ namespace BlackJack1.Controller
                     Console.Clear();
                 }
                 //Player loses bet to house
-
-                // player loses 
             }
             if (status == Status.Nothing)
             {
@@ -96,7 +110,6 @@ namespace BlackJack1.Controller
                     Console.Clear();
                 }
                 //Player wins bet
-                // player wins 
             }
             if (status == Status.HouseWins)
             {
@@ -114,7 +127,6 @@ namespace BlackJack1.Controller
                     Console.Clear();
                 }
                 // Player loses bet
-                // player loses 
             }
             if (status == Status.BlackJack)
             {

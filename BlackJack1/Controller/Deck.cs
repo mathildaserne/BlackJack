@@ -16,6 +16,9 @@ namespace BlackJack1.Controller
         public List<Card> cards = new List<Card>();
         public void GenerateDeck(int amount = 1)
         {
+            /// <summary>
+            /// Create list of cards - suit, value and points/card
+            /// </summary>
             cards.Clear();
             for (var a = 0; a < amount; a++)
             {
@@ -75,6 +78,9 @@ namespace BlackJack1.Controller
                 cards.Add(new Card() { Suit = "♥", Value = Queen, Points = 10 });
                 cards.Add(new Card() { Suit = "♥", Value = King, Points = 10 });
             }
+            /// <summary>
+            /// Shuffle
+            /// </summary>
             cards = cards.OrderBy(emp => Guid.NewGuid()).ToList(); // Shuffle list
         }
         public static void showcard()
