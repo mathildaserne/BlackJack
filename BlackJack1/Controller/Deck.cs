@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using BlackJack1.View;
 
 namespace BlackJack1.Controller
 {
@@ -22,7 +20,7 @@ namespace BlackJack1.Controller
             cards.Clear();
             for (var a = 0; a < amount; a++)
             {
-                cards.Add(new Card() { Suit = "♠", Value = Ace, Points = 1 }) ;
+                cards.Add(new Card() { Suit = "♠", Value = Ace, Points = 1 });
                 cards.Add(new Card() { Suit = "♠", Value = 2, Points = 2 });
                 cards.Add(new Card() { Suit = "♠", Value = 3, Points = 3 });
                 cards.Add(new Card() { Suit = "♠", Value = 4, Points = 4 });

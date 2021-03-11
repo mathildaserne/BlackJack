@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using BlackJack1.View;
 
 namespace BlackJack1.Controller
 {
@@ -19,7 +17,7 @@ namespace BlackJack1.Controller
     {
         public Status Status { get; set; } = new Status(); //= Status.Nothing;
         public string Name { get; set; } = "";
-        public double Bet { get; set; } = 0;
+        public int Bet { get; set; } = 0;
         public int PlayerPoints { get; set; } = 0; // ?
         public int DealerPoints { get; set; } = 0; // ?
         public List<Card> cards { get; set; } = new List<Card>(); // spelarens hand
@@ -73,17 +71,14 @@ namespace BlackJack1.Controller
                 }
             }
         }
-
         private void EnterName()
         {
             Name = Console.ReadLine();
         }
-
         private static string WannaPlayYesOrNo()
         {
             return Console.ReadLine();
         }
-
         public void SetBet(int bet)
         {
             Bet = bet;

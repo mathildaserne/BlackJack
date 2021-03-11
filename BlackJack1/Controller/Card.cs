@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BlackJack1.Controller
+﻿namespace BlackJack1.Controller
 {
     public class Card
     {
@@ -11,7 +7,7 @@ namespace BlackJack1.Controller
         public int Points { get; set; }
         public override string ToString()
         {
-            return GetName()  + " "  +  Suit;
+            return GetName() + " " + Suit;
         }
         public string GetName()
         {

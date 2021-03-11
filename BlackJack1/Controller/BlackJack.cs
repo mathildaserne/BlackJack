@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using BlackJack1.View;
 
 namespace BlackJack1.Controller
 {
@@ -32,7 +29,7 @@ namespace BlackJack1.Controller
             /// <summary
             /// Sets deck and player
             /// </summary>
-            
+
             Dealer.DealingOfCards();
             /// <summary>
             /// Give player and dealer one card 
@@ -42,7 +39,7 @@ namespace BlackJack1.Controller
             /// <summary>
             /// Check if someone has one
             /// </summary>
-            
+
             if (status == Status.Win)
             {
                 Console.WriteLine("Player wins !!");

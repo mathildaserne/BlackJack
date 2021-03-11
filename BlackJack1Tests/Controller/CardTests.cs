@@ -1,8 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BlackJack1.Controller;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BlackJack1.Controller.Tests
 {
@@ -12,7 +8,7 @@ namespace BlackJack1.Controller.Tests
         [TestMethod()]
         public void GetNameTest()
         {
-            
+
         }
 
         [TestMethod()]
