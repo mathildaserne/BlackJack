@@ -24,12 +24,12 @@ Spel börjar:
 
 ---------------------------------------------------------------------------------------------------------------------------
 För Godkänt krävs
-• Att spelet kan blanda korten
-• Att spelet kan räkna kortens värde
+• Att spelet kan blanda korten +
+• Att spelet kan räkna kortens värde +
 • Att spelet kan hålla koll på upp till 5 spelare i en runda
-• Att spelet reagerar om en spelare vinner
-• Att spelet reagerar om huset vinner
-• Att alla publika metoder testas
+• Att spelet reagerar om en spelare vinner +
+• Att spelet reagerar om huset vinner +
+• Att alla publika metoder testas 
 • Att alla tester dokumenteras i ett excelblad
 • Att metoderna dokumenteras med vem som skrivit dem
 + Klasser och metoder ska vara delade enligt funktion

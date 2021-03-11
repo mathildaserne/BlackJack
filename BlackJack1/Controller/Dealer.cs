@@ -108,7 +108,6 @@ namespace BlackJack1.Controller
                 cards.Add(dealerCard);
                 dsumofcards = dfirstcard + dsecondcard + dthirdcard;
                 Console.WriteLine(" --------------------------- SCOREBOARD DEALER " + dsumofcards);
-
             }
             else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
             {
@@ -120,8 +119,6 @@ namespace BlackJack1.Controller
             }
             // Efter removeAt så kommer kortet som var i position 0 att försvinna
             // och kortet i position 1 kommer att hamna på position 0
-
-
         }
         private static string HitOrExit()
         {
@@ -148,7 +145,7 @@ namespace BlackJack1.Controller
                 var status = Status.BlackJack;
                 return status;
             }
-            else if (points > 21)
+            else if (points > 21 && dealerpoints < 21)
             {
                 var status = Status.Bust;
 
@@ -156,7 +153,7 @@ namespace BlackJack1.Controller
 
                 return status;
             }
-            else if (dealerpoints > 21)
+            else if (dealerpoints > 21 && points < 21)
             {
                 var status = Status.HouseBust;
 

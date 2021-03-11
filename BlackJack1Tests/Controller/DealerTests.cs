@@ -7,18 +7,6 @@ namespace BlackJack1.Controller.Tests
     public class DealerTests
     {
         [TestMethod()]
-        public void PrepareDeckTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void DealingOfCardsTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void CheckForWinnerWhenCardValue11_Test()
         {
             var dealer = new Dealer();

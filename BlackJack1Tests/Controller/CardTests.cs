@@ -10,11 +10,5 @@ namespace BlackJack1.Controller.Tests
         {
 
         }
-
-        [TestMethod()]
-        public void GetNameTes()
-        {
-            Assert.Fail();
-        }
     }
 }

@@ -81,8 +81,8 @@ namespace BlackJack1.Controller
             /// </summary>
             cards = cards.OrderBy(emp => Guid.NewGuid()).ToList(); // Shuffle list
         }
-        public static void showcard()
+        /*public static void showcard()
         {
-        }
+        }*/
     }
 }

@@ -15,16 +15,17 @@ namespace BlackJack1.Controller
     }
     public class Player
     {
-        public Status Status { get; set; } = new Status(); //= Status.Nothing;
+        //public Status Status { get; set; } = new Status(); //= Status.Nothing;
         public string Name { get; set; } = "";
         public int Bet { get; set; } = 0;
-        public int PlayerPoints { get; set; } = 0; // ?
-        public int DealerPoints { get; set; } = 0; // ?
+        //public int PlayerPoints { get; set; } = 0; // ?
+        //public int DealerPoints { get; set; } = 0; // ?
         public List<Card> cards { get; set; } = new List<Card>(); // spelarens hand
 
         public void EnterPlayersName()
         {
             Console.WriteLine("Write amount of players");
+            Console.WriteLine("---------------------------");
             int TotalPlayers = Convert.ToInt32(Console.ReadLine());
 
             List<Player> PlayerList = new List<Player>();

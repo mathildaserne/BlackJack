@@ -12,12 +12,6 @@ namespace BlackJack1.Controller.Tests
         }
 
         [TestMethod()]
-        public void showcardTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void GenerateDeckTest1()
         {
             Assert.Fail();

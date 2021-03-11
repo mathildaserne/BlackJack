@@ -19,7 +19,6 @@ namespace BlackJack1.Controller
             /// <summary
             /// creates dealer
             /// </summary>
-
             // Sätt default värden
         }
         public void StartGame()

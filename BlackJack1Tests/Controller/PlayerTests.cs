@@ -12,7 +12,7 @@ namespace BlackJack1.Controller.Tests
         }
 
         [TestMethod()]
-        public void SetBetTest()
+        public void SetBetTest_RightAmount()
         {
             var testbet = 200;
             var helper = new Player();
