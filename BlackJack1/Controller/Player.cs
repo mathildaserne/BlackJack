@@ -26,37 +26,64 @@ namespace BlackJack1.Controller
 
         public void EnterPlayersName()
         {
-            Console.WriteLine("Enter your name: ");
-            Console.WriteLine("---------------------------");
-            Name = Console.ReadLine();
+            Console.WriteLine("Write amount of players");
+            int TotalPlayers = Convert.ToInt32(Console.ReadLine());
 
-            if (Name.All(char.IsLetter) && Name != null)
+            List<Player> PlayerList = new List<Player>();
+
+            for (int index = 0; index < TotalPlayers; index++)
             {
-                Console.WriteLine("---------------------------");
-                Console.WriteLine("Welcome to blackjack " + Name);
-                Console.WriteLine(" --------------------------- ");
-                Console.WriteLine("You wanna play? yes or no ");
-                Console.WriteLine("---------------------------");
-                var answer = Console.ReadLine();
-                if (answer.All(char.IsLetter) && answer != null && answer == "yes")
+                Console.WriteLine("Enter player {0}'s name:", index + 1);
+                PlayerList.Add(new Player()
                 {
-                    Console.WriteLine("---------------------------");
-                    Console.WriteLine("Bet between 100-500 kr");
-                    Console.WriteLine("---------------------------");
+                    Name = Console.ReadLine()
+                });
+            }
+            foreach (var player in PlayerList)
+            {
+                Console.WriteLine("Enter your name: ");
+                Console.WriteLine("---------------------------");
+                EnterName();
 
-                    SetBet(Convert.ToInt32(Console.ReadLine()));
-                }
-                else if (answer.All(char.IsLetter) && answer != null && answer == "No")
+                if (Name.All(char.IsLetter) && Name != null)
                 {
-                    Console.Clear();
-                }
-                if (answer.All(char.IsDigit))
-                {
-                    Console.Clear();
-                    EnterPlayersName();
+                    Console.WriteLine("---------------------------");
+                    Console.WriteLine("Welcome to blackjack " + Name);
+                    Console.WriteLine(" --------------------------- ");
+                    Console.WriteLine("You wanna play? yes or no ");
+                    Console.WriteLine("---------------------------");
+                    string answer = WannaPlayYesOrNo();
+                    if (answer.All(char.IsLetter) && answer != null && answer == "yes")
+                    {
+                        Console.WriteLine("---------------------------");
+                        Console.WriteLine("Bet between 100-500 kr");
+                        Console.WriteLine("---------------------------");
+
+                        SetBet(Convert.ToInt32(Console.ReadLine()));
+                    }
+                    else if (answer.All(char.IsLetter) && answer != null && answer == "No")
+                    {
+                        Console.Clear();
+                    }
+                    if (answer.All(char.IsDigit))
+                    {
+                        Console.Clear();
+                        EnterPlayersName();
+                    }
                 }
             }
         }
+
+        private void EnterName()
+        {
+            Name = Console.ReadLine();
+        }
+
+        private static string WannaPlayYesOrNo()
+        {
+            return Console.ReadLine();
+        }
+
         public void SetBet(int bet)
         {
             Bet = bet;

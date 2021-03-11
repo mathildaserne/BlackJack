@@ -144,8 +144,6 @@ namespace BlackJack1.Controller
                     Console.Clear();
                 }
             }
-            // etc
-
         }
     }
 }
