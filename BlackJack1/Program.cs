@@ -16,7 +16,7 @@ namespace BlackJack1
             Dealer deal = new Dealer();
             deal.PrepareDeck(); // ni glömde PrepareDeck
             deal.CheckForWinner();
-            deal.DealingOfCards();
+            deal.DealingOfCards(0);
 
         }
     }

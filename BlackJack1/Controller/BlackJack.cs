@@ -29,115 +29,122 @@ namespace BlackJack1.Controller
             /// Sets deck and player
             /// </summary>
 
-            Dealer.DealingOfCards();
+            //Dealer.DealingOfCards();
             /// <summary>
             /// Give player and dealer one card 
             /// </summary>
 
-            var status = Dealer.CheckForWinner();
+            //Dealer.CheckForWinner();
             /// <summary>
             /// Check if someone has one
             /// </summary>
+            for (int i = 0; i < Dealer.Players.Count; i++)
+            {
+                Dealer.DealingOfCards(i);
 
-            if (status == Status.Win)
-            {
-                Console.WriteLine("Player wins !!");
-                Console.WriteLine("---------------------------");
-                Console.WriteLine("Play again or exit?");
-                Console.WriteLine("---------------------------");
-                var answer = Console.ReadLine();
-                if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
+                var status = Dealer.CheckForWinner(Dealer.Players[i]); 
+                Dealer.Players[i].Status = status;
+                if (status == Status.Win)
                 {
-                    StartGame();
+                    Console.WriteLine(Dealer.Players[i].Name + " wins !!");
+                    Console.WriteLine("---------------------------");
+                    Console.WriteLine("Play again or exit?");
+                    Console.WriteLine("---------------------------");
+                    var answer = Console.ReadLine();
+                    if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
+                    {
+                        StartGame();
+                    }
+                    else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+                    {
+                        Console.Clear();
+                    }
+                    // Player wins bet of house
                 }
-                else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+
+                if (status == Status.Bust)
                 {
-                    Console.Clear();
+                    Console.WriteLine("Player has busted.. House wins ");
+                    Console.WriteLine("---------------------------");
+                    Console.WriteLine("Play again or exit?");
+                    Console.WriteLine("---------------------------");
+                    var answer = Console.ReadLine();
+                    if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
+                    {
+                        StartGame();
+                    }
+                    else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+                    {
+                        Console.Clear();
+                    }
+                    //Player loses bet to house
                 }
-                // Player wins bet of house
-            }
-            if (status == Status.Bust)
-            {
-                Console.WriteLine("Player has busted.. House wins ");
-                Console.WriteLine("---------------------------");
-                Console.WriteLine("Play again or exit?");
-                Console.WriteLine("---------------------------");
-                var answer = Console.ReadLine();
-                if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
+                if (status == Status.Nothing)
                 {
-                    StartGame();
+                    Console.WriteLine("There is no win..");
+                    Console.WriteLine("---------------------------");
+                    Console.WriteLine("Play again or exit?");
+                    Console.WriteLine("---------------------------");
+                    var answer = Console.ReadLine();
+                    if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
+                    {
+                        StartGame();
+                    }
+                    else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+                    {
+                        Console.Clear();
+                    }
+                    // keep playing
                 }
-                else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+                if (status == Status.HouseBust)
                 {
-                    Console.Clear();
+                    Console.WriteLine("House has busted.. Player wins ");
+                    Console.WriteLine("---------------------------");
+                    Console.WriteLine("Play again or exit?");
+                    Console.WriteLine("---------------------------");
+                    var answer = Console.ReadLine();
+                    if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
+                    {
+                        StartGame();
+                    }
+                    else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+                    {
+                        Console.Clear();
+                    }
+                    //Player wins bet
                 }
-                //Player loses bet to house
-            }
-            if (status == Status.Nothing)
-            {
-                Console.WriteLine("There is no win..");
-                Console.WriteLine("---------------------------");
-                Console.WriteLine("Play again or exit?");
-                Console.WriteLine("---------------------------");
-                var answer = Console.ReadLine();
-                if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
+                if (status == Status.HouseWins)
                 {
-                    StartGame();
+                    Console.WriteLine("House wins !!");
+                    Console.WriteLine("---------------------------");
+                    Console.WriteLine("Play again or exit?");
+                    Console.WriteLine("---------------------------");
+                    var answer = Console.ReadLine();
+                    if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
+                    {
+                        StartGame();
+                    }
+                    else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+                    {
+                        Console.Clear();
+                    }
+                    // Player loses bet
                 }
-                else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+                if (status == Status.BlackJack)
                 {
-                    Console.Clear();
-                }
-                // keep playing
-            }
-            if (status == Status.HouseBust)
-            {
-                Console.WriteLine("House has busted.. Player wins ");
-                Console.WriteLine("---------------------------");
-                Console.WriteLine("Play again or exit?");
-                Console.WriteLine("---------------------------");
-                var answer = Console.ReadLine();
-                if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
-                {
-                    StartGame();
-                }
-                else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
-                {
-                    Console.Clear();
-                }
-                //Player wins bet
-            }
-            if (status == Status.HouseWins)
-            {
-                Console.WriteLine("House wins !!");
-                Console.WriteLine("---------------------------");
-                Console.WriteLine("Play again or exit?");
-                Console.WriteLine("---------------------------");
-                var answer = Console.ReadLine();
-                if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
-                {
-                    StartGame();
-                }
-                else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
-                {
-                    Console.Clear();
-                }
-                // Player loses bet
-            }
-            if (status == Status.BlackJack)
-            {
-                Console.WriteLine("Blackjack !!");
-                Console.WriteLine("---------------------------");
-                Console.WriteLine("Play again or exit?");
-                Console.WriteLine("---------------------------");
-                var answer = Console.ReadLine();
-                if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
-                {
-                    StartGame();
-                }
-                else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
-                {
-                    Console.Clear();
+                    Console.WriteLine("Blackjack !!");
+                    Console.WriteLine("---------------------------");
+                    Console.WriteLine("Play again or exit?");
+                    Console.WriteLine("---------------------------");
+                    var answer = Console.ReadLine();
+                    if (answer.All(char.IsLetter) && answer != null && answer == "Play again")
+                    {
+                        StartGame();
+                    }
+                    else if (answer.All(char.IsLetter) && answer != null && answer == "Exit")
+                    {
+                        Console.Clear();
+                    }
                 }
             }
         }
