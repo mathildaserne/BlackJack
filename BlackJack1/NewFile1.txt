@@ -34,7 +34,7 @@ För Godkänt krävs
 • Att metoderna dokumenteras med vem som skrivit dem ?
 + Klasser och metoder ska vara delade enligt funktion 
 • Clean Code ?
-• Välkommenterade metoder (XML kommentarer)  ///<Summary> This method does something </summary>
++ Välkommenterade metoder (XML kommentarer)  ///<Summary> This method does something </summary>
 
 För VG krävs
 • Att alla godkända delar ska vara uppfyllda

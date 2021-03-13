@@ -5,10 +5,5 @@ namespace BlackJack1.Controller.Tests
     [TestClass()]
     public class CardTests
     {
-        [TestMethod()]
-        public void GetNameTest()
-        {
-
-        }
     }
 }
