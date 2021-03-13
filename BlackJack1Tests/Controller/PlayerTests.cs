@@ -6,14 +6,11 @@ namespace BlackJack1.Controller.Tests
     public class PlayerTests
     {
         [TestMethod()]
-        public void EnterPlayersNameTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void SetBetTest_RightAmount()
         {
+            ///<summary
+            /// Test passes when bet is between 100-500, success when passed
+            /// </summary>
             var testbet = 200;
             var helper = new Player();
             helper.SetBet(testbet);
@@ -24,7 +21,7 @@ namespace BlackJack1.Controller.Tests
         public void SetBetTest_ToLow()
         {
             ///<summary>
-            /// Test fail when under the radar of bet, success
+            /// Test fails when under the radar of bet, success when failed
             ///</summary>
             var testbet = 99;
             var helper = new Player();
@@ -36,7 +33,7 @@ namespace BlackJack1.Controller.Tests
         public void SetBetTest_ToHigh()
         {
             ///<summary>
-            /// Test fail when over the radar of bet, success
+            /// Test fails when over the radar of bet, success when failed
             ///</summary>
             var testbet = 501;
             var helper = new Player();

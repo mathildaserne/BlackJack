@@ -55,5 +55,10 @@ namespace BlackJack1.Controller.Tests
             var expected = Status.HouseBust;
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void PrepareDeck_Test()
+        {
+            
+        }
     }
 }

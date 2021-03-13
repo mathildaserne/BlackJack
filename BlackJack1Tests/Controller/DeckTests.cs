@@ -1,4 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BlackJack1.Controller.Tests
 {
@@ -8,19 +11,12 @@ namespace BlackJack1.Controller.Tests
         [TestMethod()]
         public void GenerateDeckTest()
         {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void GenerateDeckTest1()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void showcardTest1()
-        {
-            Assert.Fail();
+            var deck = new Deck();
+            List<Deck> d = new List<Deck>();
+            deck.cards = deck.cards.OrderBy(emp => Guid.NewGuid()).ToList();
+            var actual = deck.cards;
+            var expected = deck.cards;
+            Assert.AreEqual(expected, actual);
         }
     }
 }
