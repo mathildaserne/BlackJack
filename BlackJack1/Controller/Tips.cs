@@ -22,13 +22,8 @@ namespace BlackJack1.Controller
         }
         public void Surrender()
         {
-            Dealer dealer = new Dealer();
-            Player player = new Player();
-            dealer.CheckForWinner();
-            if (Status.BlackJack == null && Status.Win == null && Status.Bust == null)
-            {
-                Console.WriteLine("hhhhhhhhhhhhhhhh");
-            }
+            // if points inte nåt en status, innan "hit" kopplas player till ex surrender, 
+            // här får player tips om den bör fortsätta eller ex surrender
         }
 
     }

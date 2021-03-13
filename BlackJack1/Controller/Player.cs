@@ -15,14 +15,28 @@ namespace BlackJack1.Controller
     }
     public class Player
     {
-        public Status Status { get; set; } = new Status(); 
-        public string Name { get; set; } = "";
-        public int Bet { get; set; } = 0;
+        public Status Status { get; set; } = new Status(); ///<paramname>
+                                                           /// "Status"
+                                                           ///</paramname>
+        public string Name { get; set; } = ""; ///<paramname>
+                                               /// "Name"
+                                               ///</paramname>
+        public int Bet { get; set; } = 0; ///<paramname>
+                                          /// "Bet"
+                                          ///</paramname>
         public List<Card> cards { get; set; } = new List<Card>();  /// <summary>
                                                                    /// spelarens hand
                                                                    /// </summary>
-        public List<Player> PlayerList { get; set; }
+                                                                   /// <list>
+                                                                   /// List type Card
+                                                                   /// </list>
+        public List<Player> PlayerList { get; set; } ///<list>
+        /// List type Player
+        ///</list>
 
+        ///<summary>
+        /// Welcome to blackjack, deside bet between 100-500, 
+        /// </summary>
         public void EnterPlayersName()
         {
             foreach (var player in PlayerList)

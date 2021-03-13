@@ -29,21 +29,15 @@ namespace BlackJack1.Controller
             /// Sets deck and player
             /// </summary>
 
-            //Dealer.DealingOfCards();
-            /// <summary>
-            /// Give player and dealer one card 
-            /// </summary>
-
-            //Dealer.CheckForWinner();
-            /// <summary>
-            /// Check if someone has one
-            /// </summary>
             for (int i = 0; i < Dealer.Players.Count; i++)
             {
                 Dealer.DealingOfCards(i);
 
                 var status = Dealer.CheckForWinner(Dealer.Players[i]); 
                 Dealer.Players[i].Status = status;
+                ///<summary
+                /// If status.win, player has won, choose to play again or exit
+                ///</summary>
                 if (status == Status.Win)
                 {
                     Console.WriteLine(Dealer.Players[i].Name + " wins !!");
@@ -61,7 +55,9 @@ namespace BlackJack1.Controller
                     }
                     // Player wins bet of house
                 }
-
+                ///<summary
+                /// If status.bust, player has busted, choose to play again or exit
+                ///</summary>
                 if (status == Status.Bust)
                 {
                     Console.WriteLine("Player has busted.. House wins ");
@@ -79,6 +75,9 @@ namespace BlackJack1.Controller
                     }
                     //Player loses bet to house
                 }
+                ///<summary
+                /// If status.nothing, no win or bust, choose to play again or exit
+                ///</summary>
                 if (status == Status.Nothing)
                 {
                     Console.WriteLine("There is no win..");
@@ -96,6 +95,9 @@ namespace BlackJack1.Controller
                     }
                     // keep playing
                 }
+                ///<summary
+                /// If status.housebust, house has busted, choose to play again or exit
+                ///</summary>
                 if (status == Status.HouseBust)
                 {
                     Console.WriteLine("House has busted.. Player wins ");
@@ -113,6 +115,9 @@ namespace BlackJack1.Controller
                     }
                     //Player wins bet
                 }
+                ///<summary
+                /// If status.housewin, house has won, choose to play again or exit
+                ///</summary>
                 if (status == Status.HouseWins)
                 {
                     Console.WriteLine("House wins !!");
@@ -130,6 +135,9 @@ namespace BlackJack1.Controller
                     }
                     // Player loses bet
                 }
+                ///<summary
+                /// If status.blackjack, player or house got blackjack, choose to play again or exit
+                ///</summary>
                 if (status == Status.BlackJack)
                 {
                     Console.WriteLine("Blackjack !!");

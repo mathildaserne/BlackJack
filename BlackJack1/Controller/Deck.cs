@@ -11,6 +11,9 @@ namespace BlackJack1.Controller
         public static int Queen = 12;
         public static int King = 13;
 
+        ///<list>
+        /// List type Card
+        /// </list>
         public List<Card> cards = new List<Card>();
         public void GenerateDeck(int amount = 1)
         {
@@ -77,12 +80,9 @@ namespace BlackJack1.Controller
                 cards.Add(new Card() { Suit = "♥", Value = King, Points = 10 });
             }
             /// <summary>
-            /// Shuffle
+            /// Shuffle the deck
             /// </summary>
             cards = cards.OrderBy(emp => Guid.NewGuid()).ToList(); 
         }
-        /*public static void showcard()
-        {
-        }*/
     }
 }

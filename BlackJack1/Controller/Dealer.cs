@@ -6,17 +6,23 @@ namespace BlackJack1.Controller
 {
     public class Dealer
     {
-        //public Player player;
+        ///<list>
+        /// List type Player
+        /// </list>
         public List<Player> Players = new List<Player>();
         Deck deck;
-        // public int PlayerPoints { get; set; } = 0; // ?
-        // public int DealerPoints { get; set; } = 0; // 
-
+        
+        ///<list>
+        /// List type Card
+        /// </list>
         public List<Card> cards = new List<Card>();
         /// <summary>
         /// List for dealer's hand
         /// </summary>
 
+        ///<summary
+        /// Prepare the deck and get the decision of how many players 
+        ///</summary>
         public void PrepareDeck(bool test = false)
         {
             try
@@ -59,6 +65,10 @@ namespace BlackJack1.Controller
             {
             }
         }
+        /// <summary>
+        /// Dealing of cards for dealer, and player(s)
+        /// </summary>
+        /// <param name="currentPlayer"></param>
         public void DealingOfCards(int currentPlayer)
         {
             try
@@ -76,9 +86,6 @@ namespace BlackJack1.Controller
                 /// <summary>
                 /// Deals first set of cards for player and house
                 /// </summary>
-
-                //for (int currentPlayer = 0; currentPlayer < Players.Count; currentPlayer++)
-                {
                     var playerCard = deck.cards.ElementAt(0);
                     Console.WriteLine(Players[currentPlayer].Name + "'s card " + playerCard);
                     firstcard = playerCard.Points;
@@ -152,18 +159,15 @@ namespace BlackJack1.Controller
                     {
                         Console.Clear();
                     }
-                }
+                
             }
             catch (ArgumentOutOfRangeException)
             { }
-            // Efter removeAt så kommer kortet som var i position 0 att försvinna
-            // och kortet i position 1 kommer att hamna på position 0
         }
         private static string HitOrExit()
         {
             return Console.ReadLine();
         }
-        //internal
         public void CheckForWinner()
         {
             for (int i = 0; i < Players.Count; i++)
@@ -172,11 +176,10 @@ namespace BlackJack1.Controller
                 Players[i].Status = status;
             }
         }
-
         public Status CheckForWinner(Player player)
         {
             /// <summary>
-            /// Checks status for player and dealer, depending on sum of cards
+            /// Checks status for player and dealer, depending on sum points of cards
             /// </summary>
             var points = 0;
             foreach (var card in player.cards)

@@ -2,13 +2,22 @@
 {
     public class Card
     {
-        public string Suit { get; set; }
-        public int Value { get; set; }
-        public int Points { get; set; }
+        public string Suit { get; set; } /// <paramname>
+        /// "Suit"
+        /// </paramname>
+        public int Value { get; set; } ///<paramname>
+        /// "Value"
+        ///</paramname>
+        public int Points { get; set; }///<paramname>
+                                       /// "Points"
+                                       ///</paramname>
         public override string ToString()
         {
             return GetName() + " " + Suit;
         }
+        /// <summary>
+        /// Giving each card the name by letter instead of numbers 
+        /// </summary>
         public string GetName()
         {
             return Value switch
