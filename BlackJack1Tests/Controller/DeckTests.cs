@@ -9,7 +9,7 @@ namespace BlackJack1.Controller.Tests
     public class DeckTests
     {
         [TestMethod()]
-        public void GenerateDeckTest()
+        public void DeckTest_ShuffleCards()
         {
             var deck = new Deck();
             List<Deck> d = new List<Deck>();
