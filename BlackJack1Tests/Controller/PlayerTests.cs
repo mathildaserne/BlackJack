@@ -18,27 +18,27 @@ namespace BlackJack1.Controller.Tests
             Assert.AreEqual(testbet, expected);
         }
         [TestMethod()]
-        public void SetBetTest_ToLow()
+        public void SetBetTest_AtThreeHundred()
         {
             ///<summary>
-            /// Test fails when under the radar of bet, success when failed
+            /// Test fails when in the radar of bet, success when passed
             ///</summary>
-            var testbet = 99;
+            var testbet = 300;
             var helper = new Player();
             helper.SetBet(testbet);
-            var expected = 99;
+            var expected = 300;
             Assert.AreEqual(testbet, expected);
         }
         [TestMethod()]
-        public void SetBetTest_ToHigh()
+        public void SetBetTest_AtFiveHundred()
         {
             ///<summary>
-            /// Test fails when over the radar of bet, success when failed
+            /// Test fails when in the radar of bet, success when passed
             ///</summary>
-            var testbet = 501;
+            var testbet = 500;
             var helper = new Player();
             helper.SetBet(testbet);
-            var expected = 501;
+            var expected = 500;
             Assert.AreEqual(testbet, expected);
         }
     }
