@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace BlackJack1.Controller.Tests
 {
@@ -14,32 +15,47 @@ namespace BlackJack1.Controller.Tests
             var testbet = 200;
             var helper = new Player();
             helper.SetBet(testbet);
+            var actual = helper.Bet;
             var expected = 200;
-            Assert.AreEqual(testbet, expected);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
         public void SetBetTest_AtThreeHundred()
         {
             ///<summary>
-            /// Test fails when in the radar of bet, success when passed
+            /// Test passes when in the radar of bet, success when passed
             ///</summary>
             var testbet = 300;
             var helper = new Player();
             helper.SetBet(testbet);
+            var actual = helper.Bet;
             var expected = 300;
-            Assert.AreEqual(testbet, expected);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
         public void SetBetTest_AtFiveHundred()
         {
             ///<summary>
-            /// Test fails when in the radar of bet, success when passed
+            /// Test passes when in the radar of bet, success when passed
             ///</summary>
             var testbet = 500;
             var helper = new Player();
             helper.SetBet(testbet);
+            var actual = helper.Bet;
             var expected = 500;
-            Assert.AreEqual(testbet, expected);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void SetBetTest_ToNegavtiveValue()
+        {
+            ///<summary>
+            /// Test throws exception when bet is negative value, sucess when passed
+            ///</summary>
+            var testbet = -500;
+            var helper = new Player();
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
+                helper.SetBet(testbet)
+            );
         }
     }
 }

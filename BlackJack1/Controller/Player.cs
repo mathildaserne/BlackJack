@@ -79,16 +79,19 @@ namespace BlackJack1.Controller
         }
         public void SetBet(int bet)
         {
+            if (bet < 100) throw new ArgumentOutOfRangeException("Too low");
             Bet = bet;
+            bet = 0;
             if (Bet >= 100 && Bet <= 500)
             {
                 Console.WriteLine("---------------------------");
                 Console.WriteLine("Your bet - " + Bet);
                 Console.WriteLine("---------------------------");
             }
+            //else if (Bet < 100 || Bet > 500) Console.Clear();
             else
             {
-                Console.Clear();
+                //Console.Clear();
                 EnterPlayersName();
             }
         }

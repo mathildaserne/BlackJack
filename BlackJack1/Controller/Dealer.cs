@@ -33,7 +33,9 @@ namespace BlackJack1.Controller
                 /// </summary>
                 Console.WriteLine("Write amount of players");
                 Console.WriteLine("---------------------------");
-                int TotalPlayers = Convert.ToInt32(Console.ReadLine());
+                int TotalPlayers = 1;
+                if (!test)
+                    TotalPlayers = Convert.ToInt32(Console.ReadLine());
 
                 Players = new List<Player>();
 
